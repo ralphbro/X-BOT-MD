@@ -1,3 +1,19 @@
+const axios = require('axios');
+let cc = config.SESSION_ID.replace(/ANDYMRLIT-USA:/g, "");
+
+async function MakeSession(){
+if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
+    if(cc.length<30){
+        let { data } = await axios.get('https://paste.c-net.org/'+cc)
+    await fs.writeFileSync(__dirname + '/auth_info_baileys/creds.json', atob(data), "utf8")    
+    } else {
+	 var c = atob(cc)
+         await fs.writeFileSync(__dirname + '/auth_info_baileys/creds.json', c, "utf8")    
+    }
+}
+}
+MakeSession()
+
 const {
    spawn
 } = require('child_process')
