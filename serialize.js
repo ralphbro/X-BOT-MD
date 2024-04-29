@@ -52,7 +52,7 @@ async function MakeSession() {
         console.log("ᴡʀɪᴛᴛɪɴɢ sᴇssɪᴏɴ");
         const {
           data
-        } = await axios(`https://paste.c-net.org/${X.SESSION_ID.split(':')[1]}`);
+        } = await axios(`https://paste.c-net.org/${A.SESSION_ID.split(':')[1]}`);
         await fs.writeFileSync("./lib/session/creds.json", JSON.stringify(data));
         console.log("sᴇssɪᴏɴ ᴄʀᴇᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ");
       } catch (err) {
